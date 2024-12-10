@@ -11,38 +11,22 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Greetings from './components/Greetings';
 import UserList from './components/UserList';
-
+import Navbar from './components/Navbar';
+import {Routes, Route, Navigate} from 'react-router-dom'
+import Home from './components/Home';
+import About from './components/About';
+import UserDetails from './components/UserDetails';
 
 function App(){
   return(
     <React.Fragment>
-      <div className="container mt-3">
-        <div className="grid">
-          <div className='row'>
-            <div className='col'></div>
-                <p className="h3 fw-bold">App Component</p>
-                <p className='fst-italic'>teste</p>          
-          </div>
-          {/*
-          <div className="row">
-            <div className="col">
-              <Counter/>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <Greetings/>
-            </div>
-          </div>
-          */}
-        </div>
-        
-        <div className="row">
-          <div className="col">
-            <UserList/>
-          </div>
-        </div>
-      </div>
+      <Navbar/>
+      <Routes>
+        <Route path='/' element ={<Navigate to='/contacts/list'/>}/>
+        <Route path='/contacts/list' element={<UserList />} />
+        <Route path="/contacts/:id" element={<UserDetails/>} />
+        <Route path='/about' element={<About/>}/>
+      </Routes>
     </React.Fragment>
   ) 
   
