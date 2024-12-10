@@ -10,7 +10,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Greetings from './components/Greetings';
-import LoginForm from './components/LoginForm';
+import UserList from './components/UserList';
 
 
 function App(){
@@ -39,7 +39,7 @@ function App(){
         
         <div className="row">
           <div className="col">
-            <LoginForm/>
+            <UserList/>
           </div>
         </div>
       </div>
