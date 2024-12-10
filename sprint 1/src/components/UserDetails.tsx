@@ -25,14 +25,21 @@ let UserDetails:React.FC<IProps> = () => {
         errorMessage : ''
     });
 
-    useEffect(()=>{
+    useEffect(() => {
         if(id){
-            UserService.getAllUsers().then((response) => {
-                console.log(response.data);
-            }).catch();
+            setState(prevState => ({...prevState, loading : true}))
+            UserService.getUser(id) // Corrigir método para pegar o usuário específico
+                .then(response => {
+                    setState(prevState => ({
+                        ...prevState,
+                        loading: false,
+                        user: response.data,
+                        errorMessage: ''
+                    }));
+            });
         }
-
-    });
+        
+    })
 
     return (
         <React.Fragment>

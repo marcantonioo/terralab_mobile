@@ -11,8 +11,8 @@ export class UserService {
     }
 
     // Método para buscar um usuário específico pelo ID
-    public static getUser(id: string) {
-        let dataURL: string = `${this.serverURL}/users/${id}`;
-        return axios.get<IUser>(dataURL);
+    public static getUser(userId: string) {
+        let dataURL: string = `${this.serverURL}/users/${userId}`;
+        return axios.get(dataURL);
     }
 }
