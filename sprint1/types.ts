@@ -1,14 +1,20 @@
-var isWinter : boolean = false;
 
-var count : Number = 5;
-var namee : String = "Bran"
+class Person {
+    name : string;
+    constructor(name: string) {
+        this.name = name;
 
-var names : any[] = ["Jon", "Rickon", "Arya", 5];
-
-enum Starks {Jon, Bran, Eddard, Catlyn};
-
-var cat : Starks = Starks.Catlyn;
-
-function getName() : void{
-    console.log("Winter is coming!");
+    }
+    dance(){
+        console.log(this.name + "is dancing");
+    }
 }
+var bran = new Person("Bran");
+bran.dance();
+class AwesomePerson extends Person {
+    dance(){
+        console.log("SO AWESOME!");
+    }
+}
+var robb = new AwesomePerson("Robb");
+robb.dance();
